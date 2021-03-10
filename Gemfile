@@ -2,7 +2,9 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.6'
-
+gem 'bootstrap', '~> 4.0'
+gem 'square.rb', '~> 9.0', '>= 9.0.0.20210226'
+gem 'mini_racer', '~> 0.3.1'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.3'
 # Use sqlite3 as the database for Active Record

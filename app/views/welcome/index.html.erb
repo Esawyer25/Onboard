@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="row">
+    <h1 class="digital-clock text-center" >00:00:00</h1>
+  </div>
+</div>
+
+<div class="container">
+<div class="row">
+   <div class="col-sm bg-light">
+  <h2>Time Cards</h2>
+    <% if @team_members%>
+    <ul class="list-group">
+      <% @team_members.each do |member| %>
+        <li class="list-group-item">
+
+          <div class="container">
+          <div class="row">
+
+            <div class="col- bg-light">
+            <%name = member[:given_name] +".png"%>
+            <%= image_tag(name, width: "100", height:"auto")%>
+            </div>
+            <div class="col-md bg-light">
+
+          <h3><%= member[:given_name]%>  <%=member[:family_name]%></h3>
+
+           <button class="start start<%=member[:id]%>" id ="<%=member[:id]%>"> Start Shift</button>
+           <button class="break_start break_start<%=member[:id]%>" id ="<%=member[:id]%>" disabled>Start Lunch </button>
+           <button class="break_end break_end<%=member[:id]%>" id ="<%=member[:id]%>" disabled>End Lunch </button>
+          <button class="end end<%=member[:id]%>" id ="<%=member[:id]%>" disabled>End Shift </button>
+        <p class= "update update_<%=member[:id]%>"></p>
+         </div>
+          </div>
+        </div>
+      <% end %>
+    </ul>
+
+    <% end %>
+  </div>
+</div>
+
